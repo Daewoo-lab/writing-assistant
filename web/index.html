@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Writing Assistant — черновики по брифу</title>
+<style>
+  :root { --bg:#0f1115; --panel:#171a21; --fg:#e8eaed; --muted:#9aa0aa; --accent:#6ea8fe; --line:#262a33; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.6 -apple-system,Segoe UI,Roboto,sans-serif; }
+  .wrap { max-width:880px; margin:0 auto; padding:0 20px; }
+  header { padding:72px 0 40px; text-align:center; }
+  h1 { font-size:34px; margin:0 0 14px; }
+  .sub { color:var(--muted); font-size:18px; max-width:620px; margin:0 auto; }
+  .cta { display:inline-block; margin-top:28px; background:var(--accent); color:#0b0d12; font-weight:600;
+         padding:14px 26px; border-radius:10px; text-decoration:none; }
+  section { padding:28px 0; border-top:1px solid var(--line); }
+  h2 { font-size:22px; }
+  .tiers { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .tier { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:20px; }
+  .tier .price { font-size:24px; font-weight:700; margin:8px 0; }
+  .tier .muted { color:var(--muted); font-size:14px; }
+  details { background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:12px 16px; margin:10px 0; }
+  summary { cursor:pointer; font-weight:600; }
+  footer { padding:40px 0; color:var(--muted); font-size:14px; text-align:center; }
+  a { color:var(--accent); }
+  @media (max-width:640px){ .tiers{ grid-template-columns:1fr; } h1{ font-size:27px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Черновик по брифу — за минуту</h1>
+    <p class="sub">Присылаешь бриф (docx/pdf), получаешь готовый черновик документа в твоём стиле.
+       Скачиваешь, правишь и сдаёшь сам — как привык.</p>
+    <a class="cta" href="https://t.me/">Начать в Telegram</a>
+  </header>
+
+  <section>
+    <h2>Как это работает</h2>
+    <ol>
+      <li>Загружаешь бриф — файл с требованиями к тексту.</li>
+      <li>(Опц.) добавляешь 2–3 своих текста как образец стиля.</li>
+      <li>Получаешь черновик docx/pptx себе в чат.</li>
+      <li>Скачиваешь, редактируешь и используешь по своему усмотрению.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Тарифы</h2>
+    <div class="tiers">
+      <div class="tier"><div>Месяц</div><div class="price">250 000 сум</div><div class="muted">безлимит черновиков</div></div>
+      <div class="tier"><div>Квартал</div><div class="price">650 000 сум</div><div class="muted">≈ −13%</div></div>
+      <div class="tier"><div>Полгода</div><div class="price">1 100 000 сум</div><div class="muted">≈ −27%</div></div>
+    </div>
+    <p class="muted">Первые 2 черновика — бесплатно.</p>
+  </section>
+
+  <section>
+    <h2>Вопросы</h2>
+    <details><summary>Что именно я получаю?</summary>
+      Готовый файл-черновик по твоему брифу. Это драфт: его нужно прочитать и доработать перед использованием.</details>
+    <details><summary>Вы храните мои пароли от каких-то систем?</summary>
+      Нет. Сервис не просит и не хранит доступы к сторонним системам и ничего никуда за тебя не отправляет.
+      Ты загружаешь бриф и скачиваешь результат сам.</details>
+    <details><summary>Что с моими текстами и образцами стиля?</summary>
+      Образцы используются только для подгонки стиля твоего черновика. Детали — в
+      <a href="privacy.html">политике приватности</a>.</details>
+    <details><summary>Можно вернуть деньги?</summary>
+      Условия возврата описаны в <a href="offer.html">оферте</a>.</details>
+    <details><summary>На каких языках пишет?</summary>
+      Русский и узбекский; язык задаётся при онбординге.</details>
+    <details><summary>Это подходит для учебных заданий?</summary>
+      Инструмент даёт черновик-заготовку, которую ты редактируешь сам. Сдавать черновик как есть за свою работу —
+      на твою ответственность и против правил большинства учебных заведений.</details>
+  </section>
+
+  <footer>
+    <a href="offer.html">Оферта</a> · <a href="privacy.html">Приватность</a>
+  </footer>
+</div>
+</body>
+</html>

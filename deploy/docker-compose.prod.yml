@@ -1,0 +1,39 @@
+services:
+  api:
+    build: { context: .., dockerfile: deploy/Dockerfile }
+    command: ["uvicorn", "writing_assistant.billing.app:app", "--host", "0.0.0.0", "--port", "8000"]
+    env_file: [../.env]
+    depends_on: [postgres, redis]
+    restart: unless-stopped
+
+  bot:
+    build: { context: .., dockerfile: deploy/Dockerfile }
+    command: ["python", "-m", "writing_assistant"]
+    env_file: [../.env]
+    depends_on: [postgres, redis]
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: wa
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-wa}
+      POSTGRES_DB: wa
+    volumes: ["pgdata:/var/lib/postgresql/data"]
+    restart: unless-stopped
+
+  redis:
+    image: redis:7
+    restart: unless-stopped
+
+  nginx:
+    image: nginx:1.27
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ../web:/srv/web:ro
+    ports: ["80:80"]
+    depends_on: [api]
+    restart: unless-stopped
+
+volumes:
+  pgdata:
